@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 //ng g /page
 import { DashboardComponent } from "./page/dashboard/dashboard.component";
@@ -16,11 +16,13 @@ import { NavbarComponent } from "./component/navbar/navbar.component";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //routing
 import { AppRoutingModule } from './app.routing.module';
-import { CustomerdataComponent } from './component/customerdata/customerdata.component';
-
+//database service fuck u nedb
+import { DatabaseService } from './shared/database.service';
 
 
 declare var jQuery: any;
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,6 @@ declare var jQuery: any;
     CustomerComponent,
     TankerComponent,
     FourofourComponent,
-    CustomerdataComponent,
   ],
   imports: [
     NgbModule,
@@ -37,7 +38,7 @@ declare var jQuery: any;
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
